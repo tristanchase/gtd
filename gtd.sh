@@ -35,7 +35,7 @@ if [[ -e todos.txt ]]; then
 	rm todos.txt
 fi
 
-grep -n "^ *\*" *.txt > todos.txt
+grep -n "^ *\*" *.txt | sed 's:\*:\t\t\*:' > todos.txt
 vim todos.txt
 
 # Change back to starting directory
